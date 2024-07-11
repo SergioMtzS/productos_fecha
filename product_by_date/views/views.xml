@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+
+  <record model="ir.actions.act_window" id="show_informe_action_window">
+      <field name="name">Informes</field>
+      <field name="res_model">excel.report.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      <record id="view_product_report_excel_tree" model="ir.ui.view">
+        <field name="name">product.report.tree</field>
+        <field name="model">excel.report.product</field>
+        <field name="arch" type="xml">
+            <tree string="Product Reports">
+              <field name="company_id"/>  
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <button name="get_products_by_date" type="object" string="Descargar Reporte" class="btn-primary"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem name="Informes" id="show_informe_excel" action="show_informe_action_window"/>
+  </data>
+</odoo>
